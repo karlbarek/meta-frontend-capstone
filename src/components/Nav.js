@@ -11,16 +11,16 @@ const Nav = () => {
     return (
         <nav className={`navbar ${menuOpen ? "open" : ""}`}>
             <a href="/" className="logo">
-            <img src={logo} alt="little lemon logo"/>
+                <img src={logo} alt="little lemon logo"/>
             </a>
 
-            <div className="menu-icon">
+            <div className="menu-icon" onClick={toggleMenu}>
                 <div className="bar"></div>
                 <div className="bar"></div>
                 <div className="bar"></div>
             </div>
 
-            <ul>
+            <ul className={`nav-links ${menuOpen ? "visible" : ""}`}>
                 <li>
                     <a href="/">Home</a>
                 </li>
