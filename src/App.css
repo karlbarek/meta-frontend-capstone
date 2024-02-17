@@ -34,6 +34,10 @@ nav ul li a{
   color: #000;
 }
 
+nav ul li a:hover{
+  text-decoration: underline solid #495E57;
+}
+
 .menu-icon {
   display: none;
   cursor: pointer;
@@ -58,6 +62,60 @@ nav ul li a{
   transition: all 0.3s ease-in-out;
 }
 
+
+/* header area */
+
+.header {
+  background-color: #495e57;
+  padding: 40px 0;
+}
+
+.header section {
+color: #EDEFEE;
+padding: 10px 13%;
+position: relative;
+}
+
+h2 {
+  color: #F4CE14;
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+.banner p {
+  font-size: 20px;
+  max-width: 520px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: #F4CE14;
+  color: black;
+  padding: 14px 18px;
+  border: none;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.banner-img{
+  position: absolute;
+  right: 13%;
+  top: 15%;
+  width: 400px;
+}
+
+.banner-img img {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+}
 
 @media screen and (max-width: 768px){
   .menu-icon {
@@ -87,4 +145,5 @@ nav ul li a{
   .bar{
     background: #333333;
   }
+
 }
