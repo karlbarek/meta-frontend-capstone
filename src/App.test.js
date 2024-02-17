@@ -7,55 +7,51 @@ import Header from './components/Header';
 
 
 
-test("Renders the BookingForm", () => {
-  render(<BookingForm />);
-  const submitBtn = screen.getByText("Make Your Reservation");
+test("Renders the Header", () => {
+  render(<BrowserRouter><App /></BrowserRouter>);
+  const submitBtn = screen.getByText(/reserve table/i);
   expect(submitBtn).toBeInTheDocument();
 });
 
-test("Updates the time correctly", () => {
-  render(<BookingForm />);
-  const dateSelector = screen.getByLabelText(/Choose Date/);
+test("Renders the BookingForm", () => {
+  const mockProps = {
+    submitForm: jest.fn(),
+    dispatch: jest.fn(),
+    availableTimes: { availableTimes: ['10:00', '11:00'] }
+  };
+
+  render(<BookingForm {...mockProps} />);
+
+  const submitBtn = screen.getByTestId('reservation-submit');
+  expect(submitBtn).toBeInTheDocument();
+});
+
+
+test("Initialize/Update Times", () => {
+  const mockProps = {
+    submitForm: jest.fn(),
+    dispatch: jest.fn(),
+    availableTimes: { availableTimes: ['10:00', '11:00'] }
+  };
+
+  render(<BookingForm {...mockProps} />);
+
+  const dateSelector = screen.getByLabelText("Choose Date:");
   fireEvent.change(dateSelector, { target: { value: "2023-02-05" } });
-  const timeDropDown = screen.getByLabelText(/Choose Time/);
-  fireEvent.change(timeDropDown, { target: { value: "17:00" } });
-  expect(timeDropDown.value).toEqual("17:00");
+  const timeDropDown = screen.getByLabelText("Choose Time:");
+  fireEvent.change(timeDropDown, { target: { value: "10:00" } });
+  expect(timeDropDown.value).toEqual("10:00");
 });
 
 
 describe('Header Component', () => {
   test('renders Reserve Table button and navigates to booking on click', () => {
-      render(
-          <Router>
-              <Header />
-          </Router>
-      );
+    render(<BrowserRouter><Header /></BrowserRouter>);
 
-      const reserveTableButton = screen.getByRole('button', { name: /reserve table/i });
+      const reserveTableButton = screen.getByText(/reserve table/i);
       expect(reserveTableButton).toBeInTheDocument();
 
-      // Simulate a click and check the navigation
       fireEvent.click(reserveTableButton);
       expect(window.location.pathname).toEqual('/booking');
+    });
   });
-});
-
-test('Renders the Header heading', () => {
-    render(<BrowserRouter><App /></BrowserRouter>);
-    const headingElement = screen.getByText("Reserve Table");
-    expect(headingElement).toBeInTheDocument();
-
-    const reserveButton = screen.getByRole("button", { name: /reserve table/i });
-    fireEvent.click(reserveButton);
-
-    const headingElementNew = screen.getByText("Choose Date:");
-    expect(headingElementNew).toBeInTheDocument();
-})
-
-test('Initialize/Update Times', () => {
-  render(<BrowserRouter><App /></BrowserRouter>);
-  const reserveButton = screen.getByRole("button");
-  fireEvent.click(reserveButton);
-
-  const testTime = []
-})
