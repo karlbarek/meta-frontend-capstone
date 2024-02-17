@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import bannerImg from "../images/restauranfood.jpg";
 
 
@@ -13,7 +13,7 @@ const Header = () => {
                     <p>
                         We are a family owned Mediterraneran restaurant, focused on traditional recipes served with a modern twist.
                     </p>
-                    <NavLink to="/booking"><button aria-label='On Click'>Reserve a table</button></NavLink>
+                    <Link to="/booking"><button aria-label='On Click'>Reserve a table</button></Link>
                 </div>
                 <div className="banner-img">
                     <img src={bannerImg} alt="restaurant image" />

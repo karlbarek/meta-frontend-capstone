@@ -30,11 +30,11 @@ nav ul li {
   padding: 1em;
 }
 
-nav ul li a{
+nav ul li a {
   color: #000;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   text-decoration: underline solid #495E57;
 }
 
@@ -71,9 +71,9 @@ nav ul li a:hover{
 }
 
 .header section {
-color: #EDEFEE;
-padding: 10px 13%;
-position: relative;
+  color: #EDEFEE;
+  padding: 10px 13%;
+  position: relative;
 }
 
 h2 {
@@ -104,7 +104,7 @@ button {
   cursor: pointer;
 }
 
-.banner-img{
+.banner-img {
   position: absolute;
   right: 13%;
   top: 15%;
@@ -117,7 +117,139 @@ button {
   border-radius: 20px;
 }
 
-@media screen and (max-width: 768px){
+/* Form */
+form,
+.confirm {
+  padding: 10px 13%;
+}
+
+.formField {
+  padding: 50px 20px;
+}
+
+input,
+label {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#book-date,
+#book-time,
+#book-guests,
+#book-occasion {
+  background: #bdbdbd43;
+  padding: 8px 24px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+}
+
+.btnReceive input {
+  padding: 12px 16px;
+  margin-top: 20px;
+  background: #495e57;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+
+}
+
+.confirm span {
+  color: rgb(195, 0, 255);
+}
+
+/* Menu */
+
+.menu-container {
+  margin: 110px auto;
+  padding: 10px 13%;
+}
+
+.menu-container h2 {
+  color: #000;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cards {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem 1rem;
+}
+
+.menu-items {
+  /* height: 400px; */
+  width: 350px;
+  background: #a9c8be;
+  border-radius: 8px;
+}
+
+.menu-container img {
+  width: 100%;
+  height: 233px;
+  border-radius: 8px;
+}
+
+.menu-content {
+  padding: 5px 15px;
+}
+
+
+.menu-content .heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderbtn {
+  padding: 5px 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Footer */
+
+footer section {
+  padding: 10px 13%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.company-info img {
+  margin-top: 12px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.company-info p {
+  width: 320px;
+}
+
+footer h3 {
+  font-size: 18px;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer ul li {
+  padding: 8px 0;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
   .menu-icon {
     display: block;
   }
@@ -133,17 +265,47 @@ button {
     padding: 20px 0;
   }
 
-  .navbar{
-    background:#fff;
+  .navbar {
+    background: #fff;
     padding: 10px 8%;
   }
 
-  nav ul li a{
+  nav ul li a {
     color: #fff;
   }
 
-  .bar{
+  .bar {
     background: #333333;
   }
 
+  form,
+  .confirm {
+    padding: 10px 8%;
+  }
+
+  .header section,
+  .menu-container {
+    padding: 10px 8%;
+  }
+
+  .menu-container {
+    margin: 20px 0;
+  }
+
+  .menu-header {
+    justify-content: flex-start;
+  }
+
+  .menu-items {
+    width: 100%;
+  }
+
+  footer section {
+    padding: 10px 8%;
+    flex-direction: column;
+  }
+
+  .company-info p {
+    width: 100%;
+  }
 }
