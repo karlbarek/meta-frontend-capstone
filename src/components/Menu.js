@@ -36,7 +36,7 @@ const Menu = () => {
     return (
         <div className='menu-container'>
             <div className="menu-header">
-                <h2>Weekly specials</h2>
+                <h2>This weeks specials!</h2>
                 <button>Online Menu</button>
             </div>
             <div className="cards">

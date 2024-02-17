@@ -7,7 +7,7 @@ import Header from './components/Header';
 
 test('Renders the Header heading', () => {
     render(<BrowserRouter><App /></BrowserRouter>);
-    const headingElement = screen.getByText("Home");
+    const headingElement = screen.getByText("Reserve Table");
     expect(headingElement).toBeInTheDocument();
 
     const reserveButton = screen.getByRole("button");
@@ -21,4 +21,6 @@ test('Initialize/Update Times', () => {
   render(<BrowserRouter><App /></BrowserRouter>);
   const reserveButton = screen.getByRole("button");
   fireEvent.click(reserveButton);
+
+  const testTime = []
 })
